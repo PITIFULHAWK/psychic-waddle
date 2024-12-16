@@ -26,13 +26,13 @@ export const Navbar = () => {
   }, []);
 
   return (
-    <nav className="bg-gradient-to-r from-teal-700 to-green-500 text-white">
+    <nav className="bg-white text-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0">
             <Link
               href="/"
-              className="font-bold text-2xl text-yellow-300"
+              className="font-bold text-2xl text-teal-700"
               style={{ fontFamily: "'Poppins', sans-serif" }}
             >
               Phynovate
@@ -42,59 +42,70 @@ export const Navbar = () => {
             <div className="ml-10 flex items-baseline space-x-4">
               <Link
                 href="/about"
-                className="hover:bg-teal-600 px-3 py-2 rounded-md text-lg font-semibold"
+                className="px-3 py-2 rounded-md text-lg font-semibold hover:text-teal-800"
               >
                 About us
               </Link>
               <div className="relative" ref={dropdownRef}>
                 <button
                   onClick={toggleDropdown}
-                  className="hover:bg-teal-600 px-3 py-2 rounded-md text-lg font-semibold focus:outline-none"
+                  className="flex px-3 py-2 rounded-md text-lg font-semibold hover:bg-transparent hover:text-teal-800"
                 >
                   Our Services
+                  <span className="flex items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      height="24px"
+                      viewBox="0 -960 960 960"
+                      width="24px"
+                      fill="#179898"
+                    >
+                      <path d="M480-360 280-560h400L480-360Z" />
+                    </svg>
+                  </span>
                 </button>
                 {isDropdownOpen && (
-                  <div className="absolute right-0 mt-2 w-64 bg-[#004d40] rounded-md shadow-lg z-50">
+                  <div className="absolute right-0 mt-2 w-64 bg-white rounded-md shadow-lg z-50">
                     <div className="py-1">
                       <Link
                         href="/services#book-keeping"
-                        className="block px-4 py-2 text-lg hover:bg-[#00695c]"
+                        className="block px-4 py-2 text-lg hover:text-teal-800"
                       >
                         Book-Keeping Services
                       </Link>
                       <Link
                         href="/services#accounts-payable"
-                        className="block px-4 py-2 text-lg hover:bg-[#00695c]"
+                        className="block px-4 py-2 text-lg hover:text-teal-800"
                       >
                         Accounts Payable and Receivable Services
                       </Link>
                       <Link
                         href="/services#payroll"
-                        className="block px-4 py-2 text-lg hover:bg-[#00695c]"
+                        className="block px-4 py-2 text-lg hover:text-teal-800"
                       >
                         Payroll Services
                       </Link>
                       <Link
                         href="/services#management-accounting"
-                        className="block px-4 py-2 text-lg hover:bg-[#00695c]"
+                        className="block px-4 py-2 text-lg hover:text-teal-800"
                       >
                         Management Accounting Services
                       </Link>
                       <Link
                         href="/services#compliances-risk"
-                        className="block px-4 py-2 text-lg hover:bg-[#00695c]"
+                        className="block px-4 py-2 text-lg hover:text-teal-800"
                       >
                         Compliances and Risk Management
                       </Link>
                       <Link
                         href="/services#strategic-financial"
-                        className="block px-4 py-2 text-lg hover:bg-[#00695c]"
+                        className="block px-4 py-2 text-lg hover:text-teal-800"
                       >
                         Strategic Financial and Cash Flow Management
                       </Link>
                       <Link
                         href="/services#audit-assurance"
-                        className="block px-4 py-2 text-lg hover:bg-[#00695c]"
+                        className="block px-4 py-2 text-lg hover:text-teal-800"
                       >
                         Audit and Assurance Support
                       </Link>
@@ -104,13 +115,13 @@ export const Navbar = () => {
               </div>
               <Link
                 href="/blogs"
-                className="hover:bg-teal-600 px-3 py-2 rounded-md text-lg font-semibold"
+                className="px-3 py-2 rounded-md text-lg font-semibold hover:text-teal-800"
               >
                 Blogs
               </Link>
               <Link
                 href="/contact"
-                className="hover:bg-teal-600 px-3 py-2 rounded-md text-lg font-semibold"
+                className="px-3 py-2 rounded-md text-lg font-semibold hover:text-teal-800"
               >
                 Contact Us
               </Link>
@@ -118,7 +129,7 @@ export const Navbar = () => {
           </div>
           <div className="md:hidden">
             {/* Mobile menu button */}
-            <button className="inline-flex items-center justify-center p-2 rounded-md hover:bg-teal-600 focus:outline-none">
+            <button className="inline-flex items-center justify-center p-2 rounded-md focus:outline-none">
               <span className="sr-only">Open main menu</span>
               {/* Icon for menu */}
               <svg

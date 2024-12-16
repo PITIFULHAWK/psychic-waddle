@@ -1,5 +1,7 @@
-import ServiceCard from "@/components/ServiceCard";
 import React from "react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 const services = [
   {
@@ -54,26 +56,65 @@ const services = [
   },
 ];
 
-export default function ServicesPage() {
+function ServiceCard({ title, description, imageSrc, imageOnRight }) {
   return (
-    <div className="min-h-screen bg-white text-gray-900">
-      <div className="container mx-auto px-4 py-16">
-        <h1 className="text-5xl font-bold text-center mb-16 text-teal-800 drop-shadow-lg">
-          Our Services
-        </h1>
-        <div className="grid gap-16">
-          {services.map((service) => (
-            <div key={service.id} id={service.id} className="h-[400px]">
-              <ServiceCard
-                title={service.title}
-                description={service.description}
-                imageSrc={service.imageSrc}
-                imageOnRight={services.indexOf(service) % 2 !== 0}
-              />
-            </div>
-          ))}
+    <Card className="overflow-hidden">
+      <div
+        className={`flex flex-col md:flex-row ${imageOnRight ? "md:flex-row-reverse" : ""}`}
+      >
+        <div className="md:w-1/2">
+          <Image
+            src={imageSrc}
+            alt={title}
+            width={600}
+            height={400}
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="md:w-1/2 p-6 flex flex-col justify-center">
+          <CardHeader>
+            <CardTitle className="text-2xl font-bold mb-4">{title}</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p className="text-gray-600">{description}</p>
+            <Button className="mt-4">Learn More</Button>
+          </CardContent>
         </div>
       </div>
+    </Card>
+  );
+}
+
+export default function ServicesPage() {
+  return (
+    <div className="flex flex-col min-h-screen">
+      {/* Hero Section */}
+      <section className="bg-green-600 text-white py-20">
+        <div className="container mx-auto px-4">
+          <h1 className="text-4xl md:text-6xl font-bold mb-4">Our Services</h1>
+          <p className="text-xl mb-8">
+            Comprehensive financial solutions for your business
+          </p>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="grid gap-16">
+            {services.map((service, index) => (
+              <div key={service.id} id={service.id}>
+                <ServiceCard
+                  title={service.title}
+                  description={service.description}
+                  imageSrc={service.imageSrc}
+                  imageOnRight={index % 2 !== 0}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
