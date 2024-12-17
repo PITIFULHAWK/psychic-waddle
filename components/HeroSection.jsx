@@ -54,7 +54,7 @@ export default function HeroSection() {
         <div className="relative z-20 container mx-auto px-4">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              Expert Fractional CFOs
+              Expert Fractional Phynovates
             </h1>
             <div className="space-y-4">
               <p className="text-xl md:text-2xl text-white/90">
@@ -70,7 +70,7 @@ export default function HeroSection() {
                 size="lg"
                 className="bg-green-500 hover:bg-green-600 text-white font-semibold px-8 py-6 text-lg"
               >
-                <Link href="/consultation">Schedule A CFO Consultation</Link>
+                <Link href="/consultation">Schedule A Phynovate Consultation</Link>
               </Button>
               <Button
                 asChild
@@ -85,11 +85,11 @@ export default function HeroSection() {
         </div>
       </section>
 
-      {/* Why hire a Fractional CFO? */}
+      {/* Why hire a Fractional Phynovate? */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12">
-            Why hire a Fractional CFO?
+            Why hire a Fractional Phynovate?
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
             <Card>
@@ -101,8 +101,8 @@ export default function HeroSection() {
               </CardHeader>
               <CardContent>
                 <p>
-                  Collaborate with experienced CFOs and advanced analytics to
-                  grow your business.
+                  Collaborate with experienced Phynovates and advanced
+                  analytics to grow your business.
                 </p>
               </CardContent>
             </Card>

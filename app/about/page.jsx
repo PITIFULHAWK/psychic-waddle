@@ -46,9 +46,9 @@ export default function AboutPage() {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <p className="text-lg text-gray-700 max-w-4xl mx-auto">
-            CFOshare is committed to recognizing the inherent worth and dignity
-            of all people, without regard to race, age, creed, gender, or
-            identity. We firmly believe that people who are respected, heard,
+            Phynovate is committed to recognizing the inherent worth and
+            dignity of all people, without regard to race, age, creed, gender,
+            or identity. We firmly believe that people who are respected, heard,
             treated and advanced equitably in our business perform their work
             with greater commitment and brilliance. We seek to promote diversity
             in our team which spreads across the U.S., Mexico and Canada, and to
@@ -62,13 +62,13 @@ export default function AboutPage() {
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12">
-            More Than a Fractional CFO
+            More Than a Fractional Phynovate
           </h2>
           <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             <FeatureCard
               icon={<PencilIcon className="w-6 h-6 text-green-600" />}
               title="We meet you where you are."
-              description="CFOshare does not force you to adopt our software or reuse an Excel model that does not fit your business. We meet our customers where they are at, preserving the useful tools they have invested in."
+              description="Phynovate does not force you to adopt our software or reuse an Excel model that does not fit your business. We meet our customers where they are at, preserving the useful tools they have invested in."
             />
             <FeatureCard
               icon={<ClipboardList className="w-6 h-6 text-green-600" />}
