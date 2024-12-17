@@ -25,7 +25,7 @@ const Footer = () => {
       <div className="flex max-w-7xl p-20"></div>
       <div className="flex justify-between items-center w-full bg-black px-14">
         <span className="items-center text-white">
-          © 2022 Phynovate. All Rights Reserved. Privacy Policy
+          © 2024 Phynovate. All Rights Reserved. Privacy Policy
         </span>
         <span className="flex">
           <svg
