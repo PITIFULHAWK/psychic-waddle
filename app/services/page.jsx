@@ -3,6 +3,15 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 
+export const metadata = {
+  title: "Phynovate | Services",
+  description: "Phynovate - Services",
+  openGraph: {
+    title: "Phynovate",
+    description: "Phynovate - Services",
+  },
+};
+
 const services = [
   {
     id: "book-keeping",

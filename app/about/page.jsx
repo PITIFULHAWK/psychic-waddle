@@ -17,6 +17,15 @@ const industries = [
   { name: "Cannabis", icon: "🌿" },
 ];
 
+export const metadata = {
+  title: "Phynovate | About",
+  description: "Phynovate - About",
+  openGraph: {
+    title: "Phynovate",
+    description: "Phynovate - About",
+  },
+};
+
 export default function AboutPage() {
   return (
     <div className="flex flex-col min-h-screen">

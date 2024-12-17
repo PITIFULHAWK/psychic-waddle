@@ -11,6 +11,15 @@ import { Input } from "@/components/ui/input";
 import { Search, Calendar, User, ArrowRight } from "lucide-react";
 import Image from "next/image";
 
+export const metadata = {
+  title: "Phynovate | Blogs",
+  description: "Phynovate - Blogs",
+  openGraph: {
+    title: "Phynovate",
+    description: "Phynovate - Blogs",
+  },
+};
+
 const blogPosts = [
   {
     title: "Understanding Financial Statements",
