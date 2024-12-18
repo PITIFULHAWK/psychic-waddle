@@ -9,7 +9,7 @@ export default function HeroSection() {
         <div
           className="absolute inset-0 bg-cover bg-center z-0"
           style={{
-            backgroundImage: "url('/images/hero/hero-main.jpg')",
+            backgroundImage: "url('https://cdn.pixabay.com/photo/2015/01/08/18/30/entrepreneur-593378_1280.jpg')",
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[#003B7E]/90 to-[#003B7E]/80 z-10" />

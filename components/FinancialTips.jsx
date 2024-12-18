@@ -5,17 +5,17 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 const financialTips = [
   {
     title: "No Need to File Your BOI (For Now)",
-    image: "/images/blog/boi-filing.jpg",
+    image: "https://cdn.pixabay.com/photo/2015/05/31/15/14/woman-792162_1280.jpg",
     alt: "Stack of documents",
   },
   {
     title: "Defense Startups and SMBs Prepare for Trump 2.0",
-    image: "/images/blog/defense-startups.jpg",
+    image: "https://cdn.pixabay.com/photo/2015/05/31/10/51/technology-791029_1280.jpg",
     alt: "Drones flying in the sky",
   },
   {
     title: "Preparing for Tariffs: 4 Proactive Strategies for Small Businesses",
-    image: "/images/blog/tariffs-strategy.jpg",
+    image: "https://cdn.pixabay.com/photo/2019/12/17/17/09/woman-4702060_1280.jpg",
     alt: "Shipping containers at a port",
   },
 ];

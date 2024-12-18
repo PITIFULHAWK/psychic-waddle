@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import Image from "next/image";
 
 export const metadata = {
   title: "Phynovate | Contact",
@@ -29,13 +30,25 @@ const ContactInfo = ({ icon, title, content }) => (
 export default function ContactPage() {
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Hero Section */}
-      <section className="bg-[#003B7E] text-white py-20">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-4">Contact Us</h1>
-          <p className="text-xl text-white/90 max-w-2xl mx-auto">
-            Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.
-          </p>
+      {/* Hero Section - Updated with image */}
+      <section className="relative h-[500px] w-full overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src="https://cdn.pixabay.com/photo/2019/03/10/08/16/contact-4045623_1280.jpg"
+            alt="Contact Us"
+            width={1920}
+            height={500}
+            className="object-cover w-full h-full"
+            priority
+          />
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-r from-[#003B7E]/90 to-[#003B7E]/80 flex items-center">
+          <div className="container mx-auto px-4 text-center">
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">Contact Us</h1>
+            <p className="text-xl text-white/90 max-w-2xl mx-auto">
+              Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.
+            </p>
+          </div>
         </div>
       </section>
 

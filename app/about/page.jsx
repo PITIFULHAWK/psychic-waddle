@@ -29,16 +29,18 @@ export const metadata = {
 export default function AboutPage() {
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Hero Section */}
-      <section className="relative h-[500px] w-full">
-        <Image
-          src="/images/about/team-hero.jpg"
-          alt="Team photo"
-          width={1920}
-          height={500}
-          className="object-cover"
-          priority
-        />
+      {/* Hero Section - Updated styling */}
+      <section className="relative h-[600px] w-full overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src="https://cdn.pixabay.com/photo/2017/01/14/10/56/people-1979261_1280.jpg"
+            alt="Team photo"
+            width={1920}
+            height={500}
+            className="object-cover w-full h-full"
+            priority
+          />
+        </div>
         <div className="absolute inset-0 bg-gradient-to-r from-[#003B7E]/90 to-[#003B7E]/80 flex items-center">
           <div className="container mx-auto px-4">
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
