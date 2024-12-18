@@ -16,17 +16,17 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: {
     default: "Phynovate",
-    template: "%s | Phynovate",
+    template: "",
   },
   description: "Phynovate - Your description here",
   keywords: ["Phynovate", "Your", "Keywords", "Here"],
   authors: [{ name: "Your Name" }],
   creator: "Your Name/Company",
-  metadataBase: new URL("https://phynovate.vercel.app"),
+  metadataBase: new URL("https://phynovate.co.in"),
   openGraph: {
     title: "Phynovate",
     description: "Phynovate - Your description here",
-    url: "https://phynovate.vercel.app",
+    url: "https://phynovate.co.in",
     siteName: "Phynovate",
     locale: "en_US",
     type: "website",
