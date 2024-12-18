@@ -22,11 +22,11 @@ export const metadata = {
   keywords: ["Phynovate", "Your", "Keywords", "Here"],
   authors: [{ name: "Your Name" }],
   creator: "Your Name/Company",
-  metadataBase: new URL("https://phynovate.co.in"),
+  metadataBase: new URL("https://phynovate.vercel.app"),
   openGraph: {
     title: "Phynovate",
     description: "Phynovate - Your description here",
-    url: "https://phynovate.co.in",
+    url: "https://phynovate.vercel.app",
     siteName: "Phynovate",
     locale: "en_US",
     type: "website",
