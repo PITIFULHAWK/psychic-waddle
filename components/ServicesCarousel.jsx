@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
@@ -113,41 +113,63 @@ const services = [
 
 export const ServicesCarousel = () => {
   const [currentIndex, setCurrentIndex] = React.useState(0);
-  const itemsPerPage = 3;
+  const [itemsPerPage, setItemsPerPage] = useState(3);
+
+  // Update items per page based on screen size
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setItemsPerPage(1); // Mobile: 1 card
+      } else if (window.innerWidth < 1024) {
+        setItemsPerPage(2); // Tablet: 2 cards
+      } else {
+        setItemsPerPage(3); // Desktop: 3 cards
+      }
+    };
+
+    // Set initial value
+    handleResize();
+
+    // Add event listener
+    window.addEventListener('resize', handleResize);
+
+    // Cleanup
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex + itemsPerPage >= services.length
         ? 0
-        : prevIndex + itemsPerPage,
+        : prevIndex + itemsPerPage
     );
   };
 
   const prevSlide = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex - itemsPerPage < 0
-        ? services.length - itemsPerPage
-        : prevIndex - itemsPerPage,
+        ? Math.max(services.length - itemsPerPage, 0)
+        : prevIndex - itemsPerPage
     );
   };
 
   return (
     <section className="py-16 bg-gray-50">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 relative">
         <h2 className="text-3xl font-bold text-center mb-12">Our Services</h2>
 
-        <div className="relative">
-          <div className="flex justify-between items-center gap-8">
+        <div className="relative max-w-full overflow-hidden">
+          <div className="flex items-center gap-4 md:gap-8">
             <Button
               variant="outline"
               size="icon"
-              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-16 z-10 bg-white hover:bg-gray-100"
+              className="hidden md:flex bg-white hover:bg-gray-100"
               onClick={prevSlide}
             >
               <ChevronLeft className="h-6 w-6" />
             </Button>
 
-            <div className="grid grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 w-full">
               {services
                 .slice(currentIndex, currentIndex + itemsPerPage)
                 .map((service, index) => (
@@ -179,12 +201,32 @@ export const ServicesCarousel = () => {
             <Button
               variant="outline"
               size="icon"
-              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-16 z-10 bg-white hover:bg-gray-100"
+              className="hidden md:flex bg-white hover:bg-gray-100"
               onClick={nextSlide}
             >
               <ChevronRight className="h-6 w-6" />
             </Button>
           </div>
+        </div>
+
+        {/* Mobile navigation buttons */}
+        <div className="flex justify-center gap-4 mt-6 md:hidden">
+          <Button
+            variant="outline"
+            size="icon"
+            className="bg-white hover:bg-gray-100"
+            onClick={prevSlide}
+          >
+            <ChevronLeft className="h-6 w-6" />
+          </Button>
+          <Button
+            variant="outline"
+            size="icon"
+            className="bg-white hover:bg-gray-100"
+            onClick={nextSlide}
+          >
+            <ChevronRight className="h-6 w-6" />
+          </Button>
         </div>
       </div>
     </section>
