@@ -33,7 +33,7 @@ export default function Footer() {
             <div className="space-y-6">
               <div>
                 <h2 className="text-2xl font-bold mb-2">
-                  <span className="text-[#FFA500]">PHYNOVATE</span>
+                  <span className="text-orange-500">PHYNOVATE</span>
                 </h2>
                 <div className="flex items-center gap-2 text-xl font-semibold">
                   <Phone className="h-5 w-5" />
@@ -44,7 +44,7 @@ export default function Footer() {
                 <Mail className="h-5 w-5" />
                 <span>E. info@phynovate.com</span>
               </div>
-              <Button className="bg-[#FFA500] hover:bg-[#FF8C00] text-white">
+              <Button className="bg-orange-500 hover:bg-orange-600 text-white">
                 Get A Quote
               </Button>
             </div>
@@ -57,7 +57,7 @@ export default function Footer() {
                   <li key={link.name}>
                     <Link
                       href={link.href}
-                      className="hover:text-[#FFA500] transition-colors"
+                      className="hover:text-orange-500 transition-colors"
                     >
                       {link.name}
                     </Link>
@@ -74,7 +74,7 @@ export default function Footer() {
                   <li key={service.name}>
                     <Link
                       href={service.href}
-                      className="hover:text-[#FFA500] transition-colors"
+                      className="hover:text-orange-500 transition-colors"
                     >
                       {service.name}
                     </Link>
@@ -94,7 +94,7 @@ export default function Footer() {
               <span>© 2024 Phynovate. All Rights Reserved.</span>
               <Link
                 href="/privacy"
-                className="hover:text-[#FFA500] transition-colors"
+                className="hover:text-orange-500 transition-colors"
               >
                 Privacy Policy
               </Link>
@@ -103,7 +103,7 @@ export default function Footer() {
               <Button
                 size="icon"
                 variant="ghost"
-                className="rounded-full hover:bg-[#FFA500]/10"
+                className="rounded-full hover:bg-white/10"
                 asChild
               >
                 <Link href="https://facebook.com" target="_blank">
@@ -113,7 +113,7 @@ export default function Footer() {
               <Button
                 size="icon"
                 variant="ghost"
-                className="rounded-full hover:bg-[#FFA500]/10"
+                className="rounded-full hover:bg-white/10"
                 asChild
               >
                 <Link href="https://linkedin.com" target="_blank">

@@ -5,8 +5,14 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { usePathname } from 'next/navigation';
 
 export const ContactForm = () => {
+  const pathname = usePathname();
+  
+  // Return null (don't render) if we're on the contact page
+  if (pathname === '/contact') return null;
+
   return (
     <section className="py-16 bg-gray-50">
       <div className="container mx-auto px-4">
