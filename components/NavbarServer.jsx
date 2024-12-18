@@ -71,7 +71,7 @@ export const NavbarServer = () => {
                 </DropdownMenuContent>
               </DropdownMenu>
               <Link
-                href="/blog"
+                href="/blogs"
                 className="px-3 py-2 rounded-md text-sm font-medium hover:bg-orange-500 hover:text-white transition-colors"
               >
                 Blog
