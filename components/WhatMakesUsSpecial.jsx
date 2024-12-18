@@ -17,9 +17,9 @@ const WhatMakesUsSpecial = () => {
             leadership team to focus on what matters the most – Growth!
           </p>
           <div className="grid md:grid-cols-3 gap-8">
-            <Card className="bg-green-50">
+            <Card className="bg-blue-50">
               <CardHeader>
-                <Award className="w-12 h-12 text-green-600 mb-4" />
+                <Award className="w-12 h-12 text-[#003B7E] mb-4" />
                 <CardTitle className="text-xl font-semibold">
                   Expertise and Experience
                 </CardTitle>
@@ -32,9 +32,9 @@ const WhatMakesUsSpecial = () => {
                 </p>
               </CardContent>
             </Card>
-            <Card className="bg-green-50">
+            <Card className="bg-blue-50">
               <CardHeader>
-                <Users className="w-12 h-12 text-green-600 mb-4" />
+                <Users className="w-12 h-12 text-[#003B7E] mb-4" />
                 <CardTitle className="text-xl font-semibold">
                   Partnerships
                 </CardTitle>
@@ -47,9 +47,9 @@ const WhatMakesUsSpecial = () => {
                 </p>
               </CardContent>
             </Card>
-            <Card className="bg-green-50">
+            <Card className="bg-blue-50">
               <CardHeader>
-                <Heart className="w-12 h-12 text-green-600 mb-4" />
+                <Heart className="w-12 h-12 text-[#003B7E] mb-4" />
                 <CardTitle className="text-xl font-semibold">
                   Valued Relationships
                 </CardTitle>

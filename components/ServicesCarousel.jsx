@@ -14,13 +14,13 @@ const services = [
       <svg className="w-12 h-12" viewBox="0 0 48 48" fill="none">
         <path
           d="M8 8h32v32H8z"
-          stroke="#0055CC"
+          stroke="#003B7E"
           strokeWidth="2"
           strokeLinecap="round"
         />
         <path
           d="M16 20h16M16 28h8"
-          stroke="#0055CC"
+          stroke="#003B7E"
           strokeWidth="2"
           strokeLinecap="round"
         />
@@ -39,12 +39,12 @@ const services = [
           y="8"
           width="24"
           height="32"
-          stroke="#0055CC"
+          stroke="#003B7E"
           strokeWidth="2"
         />
         <path
           d="M18 20h12M18 28h8"
-          stroke="#0055CC"
+          stroke="#003B7E"
           strokeWidth="2"
           strokeLinecap="round"
         />
@@ -58,10 +58,10 @@ const services = [
       "Majority of our clients use our outsourcing services to prepare and file corporation tax returns accurately and efficiently. Our tax outsourcing team offers dynamic support ranging from basic compliance to complex advisory work.",
     icon: (
       <svg className="w-12 h-12" viewBox="0 0 48 48" fill="none">
-        <path d="M8 8h24v32H8z" stroke="#0055CC" strokeWidth="2" />
+        <path d="M8 8h24v32H8z" stroke="#003B7E" strokeWidth="2" />
         <path
           d="M16 16h8M16 24h8"
-          stroke="#0055CC"
+          stroke="#003B7E"
           strokeWidth="2"
           strokeLinecap="round"
         />
@@ -77,7 +77,7 @@ const services = [
       <svg className="w-12 h-12" viewBox="0 0 48 48" fill="none">
         <path
           d="M12 8l24 32M24 8l12 32M36 8L24 40"
-          stroke="#0055CC"
+          stroke="#003B7E"
           strokeWidth="2"
         />
         <circle cx="36" cy="36" r="4" fill="#FFA500" />
@@ -90,8 +90,8 @@ const services = [
       "Management reports are the lynchpins for all decision making processes. Reports need to be crisp, unambiguous, with a laser like focus but customised as per specific scale and requirements.",
     icon: (
       <svg className="w-12 h-12" viewBox="0 0 48 48" fill="none">
-        <circle cx="24" cy="24" r="16" stroke="#0055CC" strokeWidth="2" />
-        <path d="M24 16v16l8 8" stroke="#0055CC" strokeWidth="2" />
+        <circle cx="24" cy="24" r="16" stroke="#003B7E" strokeWidth="2" />
+        <path d="M24 16v16l8 8" stroke="#003B7E" strokeWidth="2" />
         <circle cx="36" cy="36" r="4" fill="#FFA500" />
       </svg>
     ),
@@ -102,8 +102,8 @@ const services = [
       "Our payroll service allows you to achieve your business ambition. You can eliminate many of the back-office costs associated with operating payroll in-house while ensuring compliance.",
     icon: (
       <svg className="w-12 h-12" viewBox="0 0 48 48" fill="none">
-        <path d="M8 12h32v24H8z" stroke="#0055CC" strokeWidth="2" />
-        <circle cx="24" cy="24" r="8" stroke="#0055CC" strokeWidth="2" />
+        <path d="M8 12h32v24H8z" stroke="#003B7E" strokeWidth="2" />
+        <circle cx="24" cy="24" r="8" stroke="#003B7E" strokeWidth="2" />
         <circle cx="36" cy="36" r="4" fill="#FFA500" />
       </svg>
     ),
@@ -114,6 +114,8 @@ const services = [
 export const ServicesCarousel = () => {
   const [currentIndex, setCurrentIndex] = React.useState(0);
   const [itemsPerPage, setItemsPerPage] = useState(3);
+  const [isAnimating, setIsAnimating] = useState(false);
+  const [slideDirection, setSlideDirection] = useState('right');
 
   // Update items per page based on screen size
   useEffect(() => {
@@ -138,6 +140,9 @@ export const ServicesCarousel = () => {
   }, []);
 
   const nextSlide = () => {
+    if (isAnimating) return;
+    setSlideDirection('right');
+    setIsAnimating(true);
     setCurrentIndex((prevIndex) =>
       prevIndex + itemsPerPage >= services.length
         ? 0
@@ -146,6 +151,9 @@ export const ServicesCarousel = () => {
   };
 
   const prevSlide = () => {
+    if (isAnimating) return;
+    setSlideDirection('left');
+    setIsAnimating(true);
     setCurrentIndex((prevIndex) =>
       prevIndex - itemsPerPage < 0
         ? Math.max(services.length - itemsPerPage, 0)
@@ -156,52 +164,64 @@ export const ServicesCarousel = () => {
   return (
     <section className="py-16 bg-gray-50">
       <div className="container mx-auto px-4 relative">
-        <h2 className="text-3xl font-bold text-center mb-12">Our Services</h2>
+        <h2 className="text-3xl font-bold text-center mb-12 text-[#003B7E]">Our Services</h2>
 
         <div className="relative max-w-full overflow-hidden">
           <div className="flex items-center gap-4 md:gap-8">
             <Button
               variant="outline"
               size="icon"
-              className="hidden md:flex bg-white hover:bg-gray-100"
+              className="hidden md:flex bg-white hover:bg-blue-50 border-[#003B7E] text-[#003B7E]"
               onClick={prevSlide}
             >
               <ChevronLeft className="h-6 w-6" />
             </Button>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 w-full">
-              {services
-                .slice(currentIndex, currentIndex + itemsPerPage)
-                .map((service, index) => (
-                  <Card
-                    key={index}
-                    className="bg-white shadow-sm hover:shadow-md transition-shadow"
-                  >
-                    <CardContent className="p-6 text-center">
-                      <div className="flex justify-center mb-6">
-                        {service.icon}
-                      </div>
-                      <h3 className="text-xl font-semibold mb-4">
-                        {service.title}
-                      </h3>
-                      <p className="text-gray-600 mb-6 text-sm">
-                        {service.description}
-                      </p>
-                      <Button
-                        variant="link"
-                        className="text-blue-700 hover:text-blue-800 p-0"
-                      >
-                        KNOW MORE
-                      </Button>
-                    </CardContent>
-                  </Card>
-                ))}
+            <div className="relative w-full overflow-hidden">
+              <div 
+                className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 transition-transform duration-500 ease-in-out`}
+                onTransitionEnd={() => setIsAnimating(false)}
+                style={{
+                  transform: isAnimating 
+                    ? `translateX(${slideDirection === 'right' ? '-100%' : '100%'})`
+                    : 'translateX(0)',
+                  opacity: isAnimating ? 0 : 1,
+                  transition: 'transform 500ms ease-in-out, opacity 500ms ease-in-out',
+                }}
+              >
+                {services
+                  .slice(currentIndex, currentIndex + itemsPerPage)
+                  .map((service, index) => (
+                    <Card
+                      key={`${service.title}-${index}`}
+                      className="bg-white shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 border-[#003B7E]/10"
+                    >
+                      <CardContent className="p-6 text-center">
+                        <div className="flex justify-center mb-6 transform transition-transform duration-300 hover:scale-110">
+                          {service.icon}
+                        </div>
+                        <h3 className="text-xl font-semibold text-[#003B7E] mb-4">
+                          {service.title}
+                        </h3>
+                        <p className="text-gray-600 mb-6 text-sm">
+                          {service.description}
+                        </p>
+                        <Button
+                          variant="link"
+                          className="text-[#FFA500] hover:text-[#FF8C00] p-0 transition-colors duration-300"
+                        >
+                          KNOW MORE
+                        </Button>
+                      </CardContent>
+                    </Card>
+                  ))}
+              </div>
             </div>
 
             <Button
               variant="outline"
               size="icon"
-              className="hidden md:flex bg-white hover:bg-gray-100"
+              className="hidden md:flex bg-white hover:bg-blue-50 border-[#003B7E] text-[#003B7E]"
               onClick={nextSlide}
             >
               <ChevronRight className="h-6 w-6" />
@@ -214,7 +234,7 @@ export const ServicesCarousel = () => {
           <Button
             variant="outline"
             size="icon"
-            className="bg-white hover:bg-gray-100"
+            className="bg-white hover:bg-blue-50 border-[#003B7E] text-[#003B7E]"
             onClick={prevSlide}
           >
             <ChevronLeft className="h-6 w-6" />
@@ -222,7 +242,7 @@ export const ServicesCarousel = () => {
           <Button
             variant="outline"
             size="icon"
-            className="bg-white hover:bg-gray-100"
+            className="bg-white hover:bg-blue-50 border-[#003B7E] text-[#003B7E]"
             onClick={nextSlide}
           >
             <ChevronRight className="h-6 w-6" />

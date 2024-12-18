@@ -18,14 +18,14 @@ const services = [
     title: "Book-Keeping Services",
     description:
       "Accurate and timely bookkeeping is crucial for maintaining financial clarity. We provide end-to-end bookkeeping services, including transaction recording, Bank Account and Credit card reconciliation, and financial reporting to keep your books updated.",
-    imageSrc: "/placeholder.svg?height=400&width=600",
+    imageSrc: "/images/services/bookkeeping.jpg",
   },
   {
     id: "accounts-payable",
     title: "Accounts Payable and Receivable Services",
     description:
       "Stay on top of your obligations with efficient AP management. We manage vendor payments, monitor expenses, and help optimize cash outflows to improve your working capital. And Improve cash flow by staying on top of incoming payments. Our AR management services help businesses monitor outstanding invoices, ensure timely collections, and maintain healthy liquidity.",
-    imageSrc: "/placeholder.svg?height=400&width=600",
+    imageSrc: "/images/services/accounts.jpg",
   },
   {
     id: "payroll",
@@ -67,7 +67,7 @@ const services = [
 
 function ServiceCard({ title, description, imageSrc, imageOnRight }) {
   return (
-    <Card className="overflow-hidden">
+    <Card className="overflow-hidden border-[#003B7E]/10 hover:shadow-lg transition-shadow duration-300">
       <div
         className={`flex flex-col md:flex-row ${imageOnRight ? "md:flex-row-reverse" : ""}`}
       >
@@ -82,11 +82,11 @@ function ServiceCard({ title, description, imageSrc, imageOnRight }) {
         </div>
         <div className="md:w-1/2 p-6 flex flex-col justify-center">
           <CardHeader>
-            <CardTitle className="text-2xl font-bold mb-4">{title}</CardTitle>
+            <CardTitle className="text-2xl font-bold mb-4 text-[#003B7E]">{title}</CardTitle>
           </CardHeader>
           <CardContent>
             <p className="text-gray-600">{description}</p>
-            <Button className="mt-4">Learn More</Button>
+            <Button className="mt-4 bg-[#FFA500] hover:bg-[#FF8C00] text-white">Learn More</Button>
           </CardContent>
         </div>
       </div>
@@ -98,7 +98,7 @@ export default function ServicesPage() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
-      <section className="bg-green-600 text-white py-20">
+      <section className="bg-[#003B7E] text-white py-20">
         <div className="container mx-auto px-4">
           <h1 className="text-4xl md:text-6xl font-bold mb-4">Our Services</h1>
           <p className="text-xl mb-8">
