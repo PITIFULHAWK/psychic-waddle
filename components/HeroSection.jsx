@@ -27,7 +27,7 @@ export default function HeroSection() {
               </p>
             </div>
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
-              <Button
+              {/* <Button
                 asChild
                 className="bg-[#FFA500] hover:bg-[#FF8C00] text-white font-semibold px-4 sm:px-8 py-4 sm:py-6 text-sm sm:text-lg w-full sm:w-auto"
               >
@@ -39,7 +39,7 @@ export default function HeroSection() {
                 className="bg-white/10 hover:bg-white/20 text-white border-white font-semibold px-4 sm:px-8 py-4 sm:py-6 text-sm sm:text-lg w-full sm:w-auto"
               >
                 <Link href="/services">Learn More</Link>
-              </Button>
+              </Button> */}
             </div>
           </div>
         </div>
