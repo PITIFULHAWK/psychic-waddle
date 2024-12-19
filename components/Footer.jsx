@@ -5,18 +5,32 @@ import { ContactForm } from "./ContactForm";
 
 const quickLinks = [
   { name: "Home", href: "/" },
-  { name: "Company", href: "/company" },
-  { name: "How it works", href: "/how-it-works" },
-  { name: "Blog", href: "/blog" },
+  { name: "Company", href: "/" },
+  { name: "How it works", href: "/" },
+  { name: "Blog", href: "/blogs" },
   { name: "Contact Us", href: "/contact" },
 ];
 
 const services = [
-  { name: "Management Accounts", href: "/services/management-accounts" },
-  { name: "Tax Returns", href: "/services/tax-returns" },
-  { name: "Bookkeeping", href: "/services/bookkeeping" },
-  { name: "Payroll", href: "/services/payroll" },
-  { name: "Year end Accounts", href: "/services/year-end-accounts" },
+  { name: "Book-Keeping", href: "/services/#book-keeping" },
+  {
+    name: "Accounts Payable and Receivable Services",
+    href: "/services/#accounts-payable",
+  },
+  { name: "Payroll Services", href: "/services/#payroll" },
+  {
+    name: "Management Accounting Services/ Financial Planning and Analysis (FP&A)",
+    href: "/services/#management-accounting",
+  },
+  {
+    name: "Compliances and Risk Management",
+    href: "/services/#compliances-risk",
+  },
+  {
+    name: "Strategic Financial and Cash Flow Management",
+    href: "/services/#strategic-financial",
+  },
+  { name: "Audit and Assurance Support", href: "/services/#audit-assurance" },
 ];
 
 export default function Footer() {

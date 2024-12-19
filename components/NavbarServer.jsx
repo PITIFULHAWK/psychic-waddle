@@ -48,7 +48,7 @@ export const NavbarServer = ({ isScrolled }) => {
           </div>
           <div className="hidden md:block">
             <div className="ml-4 lg:ml-10 flex items-center space-x-2 lg:space-x-4">
-              <Link
+              {/* <Link
                 href="/about"
                 className={`px-2 lg:px-3 py-2 rounded-md text-sm font-medium 
                   ${isScrolled 
@@ -57,7 +57,7 @@ export const NavbarServer = ({ isScrolled }) => {
                   } transition-colors whitespace-nowrap`}
               >
                 About Us
-              </Link>
+              </Link> */}
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button

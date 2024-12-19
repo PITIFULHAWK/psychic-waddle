@@ -3,112 +3,51 @@
 import React, { useEffect, useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, BookOpen, CreditCard, Users, LineChart, ShieldCheck, PiggyBank, ClipboardCheck } from "lucide-react";
 
 const services = [
   {
-    title: "Year end Accounts",
-    description:
-      "Working with varied multinationals across different sectors enables us to produce quality accounts with cross-referenced working papers for your quick and easy review.",
-    icon: (
-      <svg className="w-12 h-12" viewBox="0 0 48 48" fill="none">
-        <path
-          d="M8 8h32v32H8z"
-          stroke="#003B7E"
-          strokeWidth="2"
-          strokeLinecap="round"
-        />
-        <path
-          d="M16 20h16M16 28h8"
-          stroke="#003B7E"
-          strokeWidth="2"
-          strokeLinecap="round"
-        />
-        <circle cx="36" cy="36" r="4" fill="#FFA500" />
-      </svg>
-    ),
+    id: "book-keeping",
+    title: "Book-Keeping Services",
+    description: "Accurate and timely bookkeeping is crucial for maintaining financial clarity. We provide end-to-end bookkeeping services, including transaction recording, Bank Account and Credit card reconciliation, and financial reporting to keep your books updated.",
+    icon: <BookOpen className="w-12 h-12 text-[#003B7E]" />,
   },
   {
-    title: "Bookkeeping",
-    description:
-      "Undertaking a low-margin and time consuming activity such as Bookkeeping is an activity that accountants don't usually undertake. Outsourcing enables you to allow bookkeeping to be managed efficiently.",
-    icon: (
-      <svg className="w-12 h-12" viewBox="0 0 48 48" fill="none">
-        <rect
-          x="12"
-          y="8"
-          width="24"
-          height="32"
-          stroke="#003B7E"
-          strokeWidth="2"
-        />
-        <path
-          d="M18 20h12M18 28h8"
-          stroke="#003B7E"
-          strokeWidth="2"
-          strokeLinecap="round"
-        />
-        <circle cx="36" cy="16" r="4" fill="#FFA500" />
-      </svg>
-    ),
+    id: "accounts-payable",
+    title: "Accounts Payable and Receivable Services",
+    description: "Stay on top of your obligations with efficient AP management. We manage vendor payments, monitor expenses, and help optimize cash outflows to improve your working capital. And Improve cash flow by staying on top of incoming payments.",
+    icon: <CreditCard className="w-12 h-12 text-[#003B7E]" />,
   },
   {
-    title: "Corporate Tax Return",
-    description:
-      "Majority of our clients use our outsourcing services to prepare and file corporation tax returns accurately and efficiently. Our tax outsourcing team offers dynamic support ranging from basic compliance to complex advisory work.",
-    icon: (
-      <svg className="w-12 h-12" viewBox="0 0 48 48" fill="none">
-        <path d="M8 8h24v32H8z" stroke="#003B7E" strokeWidth="2" />
-        <path
-          d="M16 16h8M16 24h8"
-          stroke="#003B7E"
-          strokeWidth="2"
-          strokeLinecap="round"
-        />
-        <circle cx="36" cy="36" r="4" fill="#FFA500" />
-      </svg>
-    ),
+    id: "payroll",
+    title: "Payroll Services",
+    description: "Ensure seamless payroll processing, compliance with tax regulations, and timely salary disbursement. Our payroll management services guarantee that your employees are compensated accurately and on time.",
+    icon: <Users className="w-12 h-12 text-[#003B7E]" />,
   },
   {
-    title: "VAT",
-    description:
-      "Outsourcing the VAT function will help any company seek direct help from financial experts, rather than hiring those experts fulltime. Not only outsourcing the task will ease the pressure but also allow for better focus.",
-    icon: (
-      <svg className="w-12 h-12" viewBox="0 0 48 48" fill="none">
-        <path
-          d="M12 8l24 32M24 8l12 32M36 8L24 40"
-          stroke="#003B7E"
-          strokeWidth="2"
-        />
-        <circle cx="36" cy="36" r="4" fill="#FFA500" />
-      </svg>
-    ),
+    id: "management-accounting",
+    title: "Management Accounting Services/ Financial Planning and Analysis (FP&A)",
+    description: "Gain deep financial insights with custom financial models designed to meet your business needs. We specialize in preparing comprehensive Management Information System (MIS) reports to track performance metrics.",
+    icon: <LineChart className="w-12 h-12 text-[#003B7E]" />,
   },
   {
-    title: "Management Accounts",
-    description:
-      "Management reports are the lynchpins for all decision making processes. Reports need to be crisp, unambiguous, with a laser like focus but customised as per specific scale and requirements.",
-    icon: (
-      <svg className="w-12 h-12" viewBox="0 0 48 48" fill="none">
-        <circle cx="24" cy="24" r="16" stroke="#003B7E" strokeWidth="2" />
-        <path d="M24 16v16l8 8" stroke="#003B7E" strokeWidth="2" />
-        <circle cx="36" cy="36" r="4" fill="#FFA500" />
-      </svg>
-    ),
+    id: "compliances-risk",
+    title: "Compliances and Risk Management",
+    description: "Stay ahead of regulatory requirements with our Taxation and Compliance Tracker and Companies Compliance services. We ensure timely tax filings, accurate record-keeping, and adherence to evolving tax laws.",
+    icon: <ShieldCheck className="w-12 h-12 text-[#003B7E]" />,
   },
   {
-    title: "Payroll",
-    description:
-      "Our payroll service allows you to achieve your business ambition. You can eliminate many of the back-office costs associated with operating payroll in-house while ensuring compliance.",
-    icon: (
-      <svg className="w-12 h-12" viewBox="0 0 48 48" fill="none">
-        <path d="M8 12h32v24H8z" stroke="#003B7E" strokeWidth="2" />
-        <circle cx="24" cy="24" r="8" stroke="#003B7E" strokeWidth="2" />
-        <circle cx="36" cy="36" r="4" fill="#FFA500" />
-      </svg>
-    ),
+    id: "strategic-financial",
+    title: "Strategic Financial and Cash Flow Management",
+    description: "Achieving financial stability and growth starts with effective management of cash flow and overall finances. We provide expert support in forecasting, monitoring, and managing cash inflows and outflows.",
+    icon: <PiggyBank className="w-12 h-12 text-[#003B7E]" />,
   },
-  // Add other services...
+  {
+    id: "audit-assurance",
+    title: "Audit and Assurance Support",
+    description: "Ensure a smooth and hassle-free audit process with our professional Audit Assistance services. We help businesses prepare for internal, statutory, or external audits by organizing and reviewing financial records.",
+    icon: <ClipboardCheck className="w-12 h-12 text-[#003B7E]" />,
+  },
 ];
 
 export const ServicesCarousel = () => {
