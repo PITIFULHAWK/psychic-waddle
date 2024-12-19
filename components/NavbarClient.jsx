@@ -12,20 +12,16 @@ import {
 import { ChevronDown, Menu, X } from "lucide-react";
 import { services } from "./NavbarServer";
 
-export const NavbarClient = () => {
+export const NavbarClient = ({ isScrolled }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  // Handle body scroll when mobile menu is open
   useEffect(() => {
     if (isMobileMenuOpen) {
-      // Prevent background scroll when menu is open
       document.body.style.overflow = 'hidden';
     } else {
-      // Restore scroll when menu is closed
       document.body.style.overflow = 'unset';
     }
 
-    // Cleanup function to restore scroll when component unmounts
     return () => {
       document.body.style.overflow = 'unset';
     };
@@ -43,46 +39,50 @@ export const NavbarClient = () => {
           variant="ghost"
           size="icon"
           onClick={toggleMobileMenu}
-          className="text-white hover:bg-orange-500/20"
+          className={`${
+            isScrolled 
+              ? "text-[#003B7E] hover:bg-[#003B7E]/10" 
+              : "text-white hover:bg-white/10"
+          }`}
         >
           {isMobileMenuOpen ? (
-            <X className="h-5 w-5" />
+            <X className="h-5 w-5 text-[#003B7E]" />
           ) : (
-            <Menu className="h-5 w-5" />
+            <Menu className="h-5 w-5 text-[#003B7E]" />
           )}
         </Button>
       </div>
 
       {/* Mobile Dropdown Menu */}
       {isMobileMenuOpen && (
-        <div className="fixed inset-0 top-16 bg-[#003B7E] z-40 overflow-y-auto">
+        <div className="fixed inset-0 top-16 bg-white z-40 overflow-y-auto">
           <div className="px-2 pt-2 pb-3 space-y-1">
             <Link
               href="/about"
-              className="block px-3 py-2 rounded-md text-base font-medium hover:bg-orange-500 hover:text-white transition-colors"
+              className="block px-3 py-2 rounded-md text-base font-medium text-[#003B7E] hover:bg-[#003B7E] hover:text-white transition-colors"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               About Us
             </Link>
-            <div className="relative"> {/* Wrap dropdown in a relative div */}
+            <div className="relative">
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button
                     variant="ghost"
-                    className="w-full justify-start px-3 py-2 text-base font-medium hover:bg-orange-500 hover:text-white transition-colors"
+                    className="w-full justify-start px-3 py-2 text-base font-medium text-[#003B7E] hover:bg-[#003B7E] hover:text-white transition-colors"
                   >
                     Our Services <ChevronDown className="ml-1 h-4 w-4" />
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent 
-                  className="w-[calc(100vw-2rem)] mx-4 bg-[#003B7E] border-orange-500 max-h-[60vh] overflow-y-auto"
+                  className="w-[calc(100vw-2rem)] mx-4 bg-white border-[#003B7E] max-h-[60vh] overflow-y-auto"
                   sideOffset={5}
                 >
                   {services.map((service) => (
                     <DropdownMenuItem
                       key={service.name}
                       asChild
-                      className="hover:bg-orange-500 hover:text-white focus:bg-orange-500 focus:text-white"
+                      className="hover:bg-[#003B7E] hover:text-white focus:bg-[#003B7E] focus:text-white text-[#003B7E]"
                     >
                       <Link 
                         href={service.href} 
@@ -98,14 +98,14 @@ export const NavbarClient = () => {
             </div>
             <Link
               href="/blogs"
-              className="block px-3 py-2 rounded-md text-base font-medium hover:bg-orange-500 hover:text-white transition-colors"
+              className="block px-3 py-2 rounded-md text-base font-medium text-[#003B7E] hover:bg-[#003B7E] hover:text-white transition-colors"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Blog
             </Link>
             <Link
               href="/contact"
-              className="block px-3 py-2 rounded-md text-base font-medium hover:bg-orange-500 hover:text-white transition-colors"
+              className="block px-3 py-2 rounded-md text-base font-medium text-[#003B7E] hover:bg-[#003B7E] hover:text-white transition-colors"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Contact Us
