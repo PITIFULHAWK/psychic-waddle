@@ -41,7 +41,7 @@ export const NavbarClient = ({ isScrolled }) => {
           onClick={toggleMobileMenu}
           className={`${
             isScrolled 
-              ? "text-[#003B7E] hover:bg-[#003B7E]/10" 
+              ? "text-[#003B7E] hover:bg-[#003B7E]/10 hidden" 
               : "text-white hover:bg-white/10"
           }`}
         >
