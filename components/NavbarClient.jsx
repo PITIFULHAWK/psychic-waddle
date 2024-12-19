@@ -46,9 +46,9 @@ export const NavbarClient = ({ isScrolled }) => {
           }`}
         >
           {isMobileMenuOpen ? (
-            <X className="h-5 w-5 text-[#003B7E]" />
+            <X className="h-5 w-5 text-[#FFA500]" />
           ) : (
-            <Menu className="h-5 w-5 text-[#003B7E]" />
+            <Menu className="h-5 w-5 text-[#FFA500]" />
           )}
         </Button>
       </div>
