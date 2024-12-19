@@ -51,141 +51,129 @@ const services = [
 ];
 
 export const ServicesCarousel = () => {
-  const [currentIndex, setCurrentIndex] = React.useState(0);
-  const [itemsPerPage, setItemsPerPage] = useState(3);
-  const [isAnimating, setIsAnimating] = useState(false);
-  const [slideDirection, setSlideDirection] = useState('right');
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [cardsToShow, setCardsToShow] = useState(5);
 
-  // Update items per page based on screen size
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 768) {
-        setItemsPerPage(1); // Mobile: 1 card
-      } else if (window.innerWidth < 1024) {
-        setItemsPerPage(2); // Tablet: 2 cards
+        setCardsToShow(3);
       } else {
-        setItemsPerPage(3); // Desktop: 3 cards
+        setCardsToShow(5);
       }
     };
 
-    // Set initial value
     handleResize();
-
-    // Add event listener
     window.addEventListener('resize', handleResize);
-
-    // Cleanup
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   const nextSlide = () => {
-    if (isAnimating) return;
-    setSlideDirection('right');
-    setIsAnimating(true);
-    setCurrentIndex((prevIndex) =>
-      prevIndex + itemsPerPage >= services.length
-        ? 0
-        : prevIndex + itemsPerPage
-    );
+    setActiveIndex((current) => (current + 1) % services.length);
   };
 
   const prevSlide = () => {
-    if (isAnimating) return;
-    setSlideDirection('left');
-    setIsAnimating(true);
-    setCurrentIndex((prevIndex) =>
-      prevIndex - itemsPerPage < 0
-        ? Math.max(services.length - itemsPerPage, 0)
-        : prevIndex - itemsPerPage
-    );
+    setActiveIndex((current) => (current - 1 + services.length) % services.length);
+  };
+
+  const getVisibleCards = () => {
+    let cards = [];
+    const halfShow = Math.floor(cardsToShow / 2);
+    
+    for (let i = -halfShow; i <= halfShow; i++) {
+      let index = (activeIndex + i + services.length) % services.length;
+      cards.push({
+        ...services[index],
+        position: i,
+      });
+    }
+    return cards;
   };
 
   return (
-    <section className="py-16 bg-gray-50">
-      <div className="container mx-auto px-4 relative">
-        <h2 className="text-3xl font-bold text-center mb-12 text-[#003B7E]">Our Services</h2>
+    <section className="py-16 bg-gray-50 overflow-hidden">
+      <div className="container mx-auto px-4">
+        <h2 className="text-3xl font-bold text-center mb-12 text-[#003B7E]">
+          Our Services
+        </h2>
 
-        <div className="relative max-w-full overflow-hidden">
-          <div className="flex items-center gap-4 md:gap-8">
+        <div className="relative max-w-full mx-auto">
+          {/* Cards Container */}
+          <div className="relative h-[400px] flex items-center justify-center">
+            {/* Navigation Buttons - Moved in front */}
             <Button
               variant="outline"
               size="icon"
-              className="hidden md:flex bg-white hover:bg-blue-50 border-[#003B7E] text-[#003B7E]"
+              className="absolute left-4 z-30 bg-white hover:bg-blue-50 border-[#003B7E] text-[#003B7E]"
               onClick={prevSlide}
             >
               <ChevronLeft className="h-6 w-6" />
             </Button>
 
-            <div className="relative w-full overflow-hidden">
-              <div 
-                className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 transition-transform duration-500 ease-in-out`}
-                onTransitionEnd={() => setIsAnimating(false)}
-                style={{
-                  transform: isAnimating 
-                    ? `translateX(${slideDirection === 'right' ? '-100%' : '100%'})`
-                    : 'translateX(0)',
-                  opacity: isAnimating ? 0 : 1,
-                  transition: 'transform 500ms ease-in-out, opacity 500ms ease-in-out',
-                }}
-              >
-                {services
-                  .slice(currentIndex, currentIndex + itemsPerPage)
-                  .map((service, index) => (
-                    <Card
-                      key={`${service.title}-${index}`}
-                      className="bg-white shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 border-[#003B7E]/10"
-                    >
-                      <CardContent className="p-6 text-center">
-                        <div className="flex justify-center mb-6 transform transition-transform duration-300 hover:scale-110">
-                          {service.icon}
-                        </div>
-                        <h3 className="text-xl font-semibold text-[#003B7E] mb-4">
-                          {service.title}
-                        </h3>
-                        <p className="text-gray-600 mb-6 text-sm">
-                          {service.description}
-                        </p>
-                        <Button
-                          variant="link"
-                          className="text-[#FFA500] hover:text-[#FF8C00] p-0 transition-colors duration-300"
-                        >
-                          KNOW MORE
-                        </Button>
-                      </CardContent>
-                    </Card>
-                  ))}
-              </div>
-            </div>
-
             <Button
               variant="outline"
               size="icon"
-              className="hidden md:flex bg-white hover:bg-blue-50 border-[#003B7E] text-[#003B7E]"
+              className="absolute right-4 z-30 bg-white hover:bg-blue-50 border-[#003B7E] text-[#003B7E]"
               onClick={nextSlide}
             >
               <ChevronRight className="h-6 w-6" />
             </Button>
-          </div>
-        </div>
 
-        {/* Mobile navigation buttons */}
-        <div className="flex justify-center gap-4 mt-6 md:hidden">
-          <Button
-            variant="outline"
-            size="icon"
-            className="bg-white hover:bg-blue-50 border-[#003B7E] text-[#003B7E]"
-            onClick={prevSlide}
-          >
-            <ChevronLeft className="h-6 w-6" />
-          </Button>
-          <Button
-            variant="outline"
-            size="icon"
-            className="bg-white hover:bg-blue-50 border-[#003B7E] text-[#003B7E]"
-            onClick={nextSlide}
-          >
-            <ChevronRight className="h-6 w-6" />
-          </Button>
+            {/* Cards */}
+            <div className="absolute w-full flex justify-center items-center">
+              {getVisibleCards().map((service, index) => {
+                const position = service.position;
+                const isCenter = position === 0;
+                const spread = position < 0 ? -1 : 1;
+                const spreadDistance = Math.abs(position) * 100;
+
+                return (
+                  <div
+                    key={`${service.id}-${index}`}
+                    className="absolute transition-all duration-500"
+                    style={{
+                      transform: `
+                        translateX(${isCenter ? '0' : `${spread * spreadDistance}%`})
+                        scale(${isCenter ? 1 : 0.8})
+                        perspective(1000px)
+                        rotateY(${position * 10}deg)
+                      `,
+                      zIndex: cardsToShow - Math.abs(position),
+                      opacity: 1 - (Math.abs(position) * 0.15),
+                    }}
+                  >
+                    <Card className="w-[300px] h-[350px] bg-white shadow-sm hover:shadow-md transition-all duration-300 border-[#003B7E]/10">
+                      <CardContent className="p-6 text-center h-full flex flex-col justify-between">
+                        <div>
+                          <div className="flex justify-center mb-6 transform transition-transform duration-300 hover:scale-110">
+                            {service.icon}
+                          </div>
+                          <h3 className="text-xl font-semibold text-[#003B7E] mb-4">
+                            {service.title}
+                          </h3>
+                          <p className="text-gray-600 text-sm line-clamp-4">
+                            {service.description}
+                          </p>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Mobile Navigation Dots */}
+          <div className="flex justify-center gap-2 mt-6 md:hidden">
+            {services.map((_, index) => (
+              <button
+                key={index}
+                className={`w-2 h-2 rounded-full transition-all duration-300 
+                  ${index === activeIndex ? 'bg-[#003B7E] w-4' : 'bg-[#003B7E]/30'}`}
+                onClick={() => setActiveIndex(index)}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>

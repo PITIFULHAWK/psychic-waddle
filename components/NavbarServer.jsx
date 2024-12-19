@@ -76,8 +76,11 @@ export const NavbarServer = ({ isScrolled }) => {
                     isScrolled 
                       ? "bg-white border-[#FFA500]" 
                       : "bg-[#003B7E] border-[#FFA500]"
-                  } w-[280px] lg:w-[320px] backdrop-blur-md`}
+                  } w-[280px] lg:w-[320px] backdrop-blur-md overflow-y-auto max-h-[60vh]`}
                   align="end"
+                  sideOffset={5}
+                  onOpenAutoFocus={(e) => e.preventDefault()}
+                  style={{ scrollbarGutter: 'stable' }}
                 >
                   {services.map((service) => (
                     <DropdownMenuItem 
