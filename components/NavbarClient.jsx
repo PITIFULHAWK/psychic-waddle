@@ -57,13 +57,13 @@ export const NavbarClient = ({ isScrolled }) => {
       {isMobileMenuOpen && (
         <div className="fixed inset-0 top-16 bg-white z-40 overflow-y-auto">
           <div className="px-2 pt-2 pb-3 space-y-1">
-            <Link
+            {/* <Link
               href="/about"
               className="block px-3 py-2 rounded-md text-base font-medium text-[#003B7E] hover:bg-[#003B7E] hover:text-white transition-colors"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               About Us
-            </Link>
+            </Link> */}
             <div className="relative">
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
