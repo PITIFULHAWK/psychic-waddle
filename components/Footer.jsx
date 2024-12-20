@@ -51,16 +51,16 @@ export default function Footer() {
                 </h2>
                 <div className="flex items-center gap-2 text-xl font-semibold">
                   <Phone className="h-5 w-5" />
-                  Call. 720-230-6058
+                  +91 70049 51736, +91 70025 06060
                 </div>
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="h-5 w-5" />
-                <span>E. info@phynovate.com</span>
+                <span>info@phynovate.com</span>
               </div>
-              <Button className="bg-orange-500 hover:bg-orange-600 text-white">
+              {/*<Button className="bg-orange-500 hover:bg-orange-600 text-white">
                 Get A Quote
-              </Button>
+              </Button>*/}
             </div>
 
             {/* Quick Links */}
