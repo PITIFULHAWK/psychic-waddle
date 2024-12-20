@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Phone, Mail, Facebook, Linkedin } from "lucide-react";
 import Link from "next/link";
-import { ContactForm } from "./ContactForm";
+import { ContactFormBottom } from "./ContactFormBottom";
 
 const quickLinks = [
   { name: "Home", href: "/" },
@@ -36,8 +36,7 @@ const services = [
 export default function Footer() {
   return (
     <footer className="w-full">
-      {/* Contact Form Section */}
-      <ContactForm />
+      <ContactFormBottom />
 
       {/* Main Footer Section */}
       <div className="bg-[#003B7E] text-white">

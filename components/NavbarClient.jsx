@@ -17,13 +17,13 @@ export const NavbarClient = ({ isScrolled }) => {
 
   useEffect(() => {
     if (isMobileMenuOpen) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = "unset";
     }
 
     return () => {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = "unset";
     };
   }, [isMobileMenuOpen]);
 
@@ -39,11 +39,10 @@ export const NavbarClient = ({ isScrolled }) => {
           variant="ghost"
           size="icon"
           onClick={toggleMobileMenu}
-          className={`${
-            isScrolled 
-              ? "text-[#003B7E] hover:bg-[#003B7E]/10 hidden" 
+          className={`${isScrolled
+              ? "text-[#003B7E] hover:bg-[#003B7E]/10 hidden"
               : "text-white hover:bg-white/10"
-          }`}
+            }`}
         >
           {isMobileMenuOpen ? (
             <X className="h-5 w-5 text-[#FFA500]" />
@@ -64,6 +63,13 @@ export const NavbarClient = ({ isScrolled }) => {
             >
               About Us
             </Link> */}
+            <Link
+              href="/#"
+              className="block px-3 py-2 rounded-md text-base font-medium text-[#003B7E] hover:bg-[#003B7E] hover:text-white transition-colors"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Home
+            </Link>
             <div className="relative">
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
@@ -74,7 +80,7 @@ export const NavbarClient = ({ isScrolled }) => {
                     Our Services <ChevronDown className="ml-1 h-4 w-4" />
                   </Button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent 
+                <DropdownMenuContent
                   className="w-[calc(100vw-2rem)] mx-4 bg-white border-[#003B7E] max-h-[60vh] overflow-y-auto"
                   sideOffset={5}
                 >
@@ -84,8 +90,8 @@ export const NavbarClient = ({ isScrolled }) => {
                       asChild
                       className="hover:bg-[#003B7E] hover:text-white focus:bg-[#003B7E] focus:text-white text-[#003B7E]"
                     >
-                      <Link 
-                        href={service.href} 
+                      <Link
+                        href={service.href}
                         className="w-full px-3 py-2 text-sm"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
