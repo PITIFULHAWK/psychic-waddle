@@ -1,0 +1,91 @@
+{
+  "metadata": {
+    "title": "Tax Planning Strategy For Small Businesses",
+    "slug": "tax-planning-strategy",
+    "author": "Financial Insights Team",
+    "publishDate": "2024-01-10",
+    "readTime": "7 min read",
+    "tags": [
+      "tax",
+      "small business",
+      "finance"
+    ],
+    "seo": {
+      "metaDescription": "Comprehensive guide to tax planning strategies for small businesses",
+      "keywords": [
+        "tax planning",
+        "small business taxes",
+        "tax deductions"
+      ]
+    }
+  },
+  "content": {
+    "sections": [
+      {
+        "type": "heading",
+        "level": 1,
+        "text": "Tax Planning Strategy For Small Businesses",
+        "styling": {
+          "fontSize": "24px",
+          "fontWeight": "bold",
+          "color": "#333333"
+        }
+      },
+      {
+        "type": "bulletList",
+        "title": "Deductible Small Business Expenses",
+        "items": [
+          {
+            "text": "Office rent or lease payments"
+          },
+          {
+            "text": "Utilities such as electricity, water, and internet"
+          },
+          {
+            "text": "Office supplies and equipment"
+          },
+          {
+            "text": "Business insurance premiums"
+          },
+          {
+            "text": "Professional fees, such as accounting or legal services"
+          },
+          {
+            "text": "Advertising and marketing expenses"
+          }
+        ]
+      },
+      {
+        "type": "section",
+        "title": "Home Office Deductions",
+        "content": "If a portion of your home is used exclusively for business purposes, you may be eligible for a home office deduction. This deduction allows small business owners to deduct a portion of their home-related expenses, such as mortgage interest, property taxes, utilities, and maintenance costs."
+      },
+      {
+        "type": "section",
+        "title": "Employee Expenses",
+        "content": "Small businesses can deduct various expenses related to employees, including salaries, wages, bonuses, benefits, and payroll taxes. Additionally, expenses for employee training, travel, and professional development may also be deductible."
+      }
+    ],
+    "htmlContent": "<article>Full HTML representation of the document</article>"
+  },
+  "styling": {
+    "responsiveBreakpoints": {
+      "mobile": {
+        "maxWidth": "480px",
+        "fontSize": "14px"
+      },
+      "tablet": {
+        "maxWidth": "768px",
+        "fontSize": "16px"
+      },
+      "desktop": {
+        "minWidth": "1024px",
+        "fontSize": "18px"
+      }
+    },
+    "cssClasses": {
+      "container": "tax-strategy-container",
+      "heading": "tax-strategy-heading"
+    }
+  }
+}

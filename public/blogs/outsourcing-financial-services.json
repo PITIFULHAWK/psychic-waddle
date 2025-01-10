@@ -1,0 +1,80 @@
+{
+  "metadata": {
+    "title": "Outsourcing Financial Services to India: A Detailed Benefit Analysis",
+    "slug": "outsourcing-financial-services-india",
+    "author": "Global Business Insights",
+    "publishDate": "2024-01-10",
+    "readTime": "6 min read",
+    "tags": [
+      "outsourcing",
+      "financial services",
+      "India",
+      "global business"
+    ],
+    "seo": {
+      "metaDescription": "Comprehensive analysis of benefits of outsourcing financial services to India",
+      "keywords": [
+        "financial outsourcing",
+        "India outsourcing",
+        "cost-effective services"
+      ]
+    }
+  },
+  "content": {
+    "sections": [
+      {
+        "type": "heading",
+        "level": 1,
+        "text": "Outsourcing Financial Services to India",
+        "styling": {
+          "fontSize": "24px",
+          "fontWeight": "bold"
+        }
+      },
+      {
+        "type": "section",
+        "title": "Cost-Effectiveness",
+        "content": "One of the primary drivers of outsourcing is cost reduction, and India consistently outperforms other countries in this regard.",
+        "benefits": [
+          "Lower labour costs",
+          "Scalable solutions"
+        ]
+      },
+      {
+        "type": "section",
+        "title": "Talent Pool",
+        "content": "India boasts one of the largest pools of highly educated and skilled professionals in finance and accounting.",
+        "keyPoints": [
+          "Millions of graduates annually",
+          "Professionals with certifications like CA, CPA, CMA"
+        ]
+      },
+      {
+        "type": "section",
+        "title": "Technological Proficiency",
+        "content": "India's outsourcing firms are equipped with cutting-edge technology to deliver efficient and secure services."
+      }
+    ],
+    "htmlContent": "<article>Full HTML representation of the document</article>"
+  },
+  "styling": {
+    "responsiveBreakpoints": {
+      "mobile": {
+        "maxWidth": "480px",
+        "fontSize": "14px"
+      },
+      "tablet": {
+        "maxWidth": "768px",
+        "fontSize": "16px"
+      },
+      "desktop": {
+        "minWidth": "1024px",
+        "fontSize": "18px"
+      }
+    },
+    "cssClasses": {
+      "container": "outsourcing-services-container",
+      "heading": "outsourcing-services-heading"
+    }
+  }
+}

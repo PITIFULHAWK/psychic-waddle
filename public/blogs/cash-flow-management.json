@@ -1,0 +1,88 @@
+{
+  "metadata": {
+    "title": "Importance of Cash Flow Management",
+    "slug": "cash-flow-management-guide",
+    "author": "Financial Strategy Experts",
+    "publishDate": "2024-01-10",
+    "readTime": "5 min read",
+    "tags": [
+      "cash flow",
+      "financial management",
+      "business strategy"
+    ],
+    "seo": {
+      "metaDescription": "Comprehensive guide to understanding and managing cash flow for business success",
+      "keywords": [
+        "cash flow management",
+        "business finance",
+        "financial stability"
+      ]
+    }
+  },
+  "content": {
+    "sections": [
+      {
+        "type": "heading",
+        "level": 1,
+        "text": "Importance of Cash Flow Management",
+        "styling": {
+          "fontSize": "24px",
+          "fontWeight": "bold"
+        }
+      },
+      {
+        "type": "statistic",
+        "content": "82% of businesses fail due to cash flow issues"
+      },
+      {
+        "type": "section",
+        "title": "What is Cash Flow Management?",
+        "content": "Cash flow management refers to the process of monitoring, analyzing, and optimizing the inflow and outflow of cash within a business."
+      },
+      {
+        "type": "bulletList",
+        "title": "Types of Cash Flow",
+        "items": [
+          {
+            "type": "Operating Cash Flow (OCF)",
+            "description": "Money generated from core business operations"
+          },
+          {
+            "type": "Investing Cash Flow (ICF)",
+            "description": "Tracks investment-related activities like purchasing equipment or selling assets"
+          }
+        ]
+      },
+      {
+        "type": "section",
+        "title": "Benefits of Cash Flow Management",
+        "benefits": [
+          "Improved financial stability",
+          "Enhanced planning and budgeting",
+          "Timely debt repayment"
+        ]
+      }
+    ],
+    "htmlContent": "<article>Full HTML representation of the document</article>"
+  },
+  "styling": {
+    "responsiveBreakpoints": {
+      "mobile": {
+        "maxWidth": "480px",
+        "fontSize": "14px"
+      },
+      "tablet": {
+        "maxWidth": "768px",
+        "fontSize": "16px"
+      },
+      "desktop": {
+        "minWidth": "1024px",
+        "fontSize": "18px"
+      }
+    },
+    "cssClasses": {
+      "container": "cash-flow-container",
+      "heading": "cash-flow-heading"
+    }
+  }
+}
