@@ -18,7 +18,7 @@ export default function Home() {
       <HeroSection />
       <ServicesCarousel />
       <WhatMakesUsSpecial />
-      {/*<FinancialTips />*/}
+      <FinancialTips />
     </>
   );
 }

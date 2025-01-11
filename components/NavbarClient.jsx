@@ -102,13 +102,13 @@ export const NavbarClient = ({ isScrolled }) => {
                 </DropdownMenuContent>
               </DropdownMenu>
             </div>
-            {/*<Link
-              href="/blogs"
+            <Link
+              href="/blog"
               className="block px-3 py-2 rounded-md text-base font-medium text-[#003B7E] hover:bg-[#003B7E] hover:text-white transition-colors"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Blog
-            </Link>*/}
+            </Link>
             <Link
               href="/contact"
               className="block px-3 py-2 rounded-md text-base font-medium text-[#003B7E] hover:bg-[#003B7E] hover:text-white transition-colors"

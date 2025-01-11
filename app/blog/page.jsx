@@ -1,3 +1,4 @@
+// Import necessary libraries
 import React from "react";
 import {
   Card,
@@ -10,6 +11,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Search, Calendar, User, ArrowRight } from "lucide-react";
 import Image from "next/image";
+import { client } from "@/sanity/lib/client";
+import Link from "next/link";
 
 export const metadata = {
   title: "Phynovate | Blogs",
@@ -20,34 +23,21 @@ export const metadata = {
   },
 };
 
-const blogPosts = [
-  {
-    title: "Understanding Financial Statements",
-    excerpt:
-      "Learn how to read and interpret financial statements for better business decisions.",
-    author: "John Doe",
-    date: "2024-12-10",
-    image: "https://cdn.pixabay.com/photo/2015/02/02/11/09/office-620822_1280.jpg",
-  },
-  {
-    title: "Tax Planning Strategies for Small Businesses",
-    excerpt:
-      "Discover effective tax planning strategies to minimize your small business tax liability.",
-    author: "Jane Smith",
-    date: "2024-12-08",
-    image: "https://cdn.pixabay.com/photo/2015/01/09/11/08/startup-594090_1280.jpg",
-  },
-  {
-    title: "The Importance of Cash Flow Management",
-    excerpt:
-      "Explore why cash flow management is crucial for business success and how to improve it.",
-    author: "Mike Johnson",
-    date: "2024-12-05",
-    image: "https://cdn.pixabay.com/photo/2015/01/08/18/27/startup-593341_1280.jpg",
-  },
-];
+// Replace this with your API endpoint or CMS query function
 
-export default function BlogPage() {
+export default async function BlogPage() {
+  const query = `*[_type == "post"] {
+    title,
+    slug,
+    "image": mainImage.asset->url, // Resolve image URL
+    excerpt,
+    body,
+    "author": author->name,       // Resolve author name
+    publishedAt
+  }`;
+
+  const blogPosts = await client.fetch(query);
+
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
@@ -64,7 +54,9 @@ export default function BlogPage() {
         </div>
         <div className="absolute inset-0 bg-gradient-to-r from-[#003B7E]/90 to-[#003B7E]/80 flex items-center">
           <div className="container mx-auto px-4">
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">Blogs</h1>
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
+              Blogs
+            </h1>
             <p className="text-xl text-white/90 mb-8">
               Insights and advice for financial success
             </p>
@@ -73,7 +65,10 @@ export default function BlogPage() {
                 placeholder="Search articles..."
                 className="bg-white/90 text-black placeholder:text-gray-500"
               />
-              <Button variant="secondary" className="bg-[#FFA500] hover:bg-[#FF8C00] text-white">
+              <Button
+                variant="secondary"
+                className="bg-[#FFA500] hover:bg-[#FF8C00] text-white"
+              >
                 <Search className="w-4 h-4 mr-2" />
                 Search
               </Button>
@@ -87,7 +82,11 @@ export default function BlogPage() {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {blogPosts.map((post, index) => (
-              <Card key={index} className="overflow-hidden border-[#003B7E]/10 hover:shadow-lg transition-shadow duration-300">
+              <Card
+                key={index}
+                className="overflow-hidden border-[#003B7E]/10 hover:shadow-lg transition-shadow duration-300"
+              >
+                {console.log(post.body[0].children[0].text)}
                 <Image
                   src={post.image}
                   alt={post.title}
@@ -99,11 +98,11 @@ export default function BlogPage() {
                   <CardTitle className="text-[#003B7E]">{post.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-600 mb-4">{post.excerpt}</p>
+                  <p className="text-gray-600 mb-4">{post.body[0].children[0].text.slice(0, 85)}...</p>
                   <div className="flex items-center text-sm text-gray-500 gap-4">
                     <span className="flex items-center">
                       <Calendar className="w-4 h-4 mr-1 text-[#003B7E]" />
-                      {post.date}
+                      {new Date(post.publishedAt).toLocaleDateString()}
                     </span>
                     <span className="flex items-center">
                       <User className="w-4 h-4 mr-1 text-[#003B7E]" />
@@ -112,9 +111,11 @@ export default function BlogPage() {
                   </div>
                 </CardContent>
                 <CardFooter>
-                  <Button variant="link" className="p-0">
-                    Read More <ArrowRight className="w-4 h-4 ml-2" />
-                  </Button>
+                  <Link href={`/blog/${post.slug.current}`} >
+                    <Button variant="link" className="p-2 hover:bg-[#003B7E] hover:text-[#fff] text-[#FFA500]">
+                      Read more<ArrowRight className="w-4 h-4 ml-2" />
+                    </Button>
+                  </Link>
                 </CardFooter>
               </Card>
             ))}

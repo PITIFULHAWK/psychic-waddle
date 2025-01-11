@@ -112,8 +112,8 @@ export const NavbarServer = ({ isScrolled }) => {
                   ))}
                 </DropdownMenuContent>
               </DropdownMenu>
-              {/*<Link
-                href="/blogs"
+              <Link
+                href="/blog"
                 className={`px-2 lg:px-3 py-2 rounded-md text-sm font-medium 
                   ${isScrolled
                     ? "text-[#003B7E] hover:text-[#FFA500]"
@@ -121,7 +121,7 @@ export const NavbarServer = ({ isScrolled }) => {
                   } transition-colors whitespace-nowrap`}
               >
                 Blog
-              </Link>*/}
+              </Link>
               <Link
                 href="/contact"
                 className={`px-2 lg:px-3 py-2 rounded-md text-sm font-medium 
