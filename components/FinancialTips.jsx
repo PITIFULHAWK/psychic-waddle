@@ -46,7 +46,7 @@ const FinancialTips = async () => {
               <Card key={index} className="overflow-hidden hover:shadow-lg transition-shadow duration-300 border-[#003B7E]/10">
                 <Image
                   src={post.image}
-                  alt={post.alt}
+                  alt={post.title}
                   width={300}
                   height={200}
                   className="w-full h-48 object-cover"

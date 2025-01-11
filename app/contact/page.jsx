@@ -39,10 +39,10 @@ export default function ContactPage() {
         </div>
         <div className="absolute inset-0 bg-gradient-to-r from-[#003B7E]/90 to-[#003B7E]/80 flex items-center">
           <div className="container mx-auto px-4 text-center">
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 animate-fade-in-up">
               Contact Us
             </h1>
-            <p className="text-xl text-white/90 max-w-2xl mx-auto">
+            <p className="text-xl text-white/90 max-w-2xl mx-auto animate-fade-in-up">
               Have questions? We'd love to hear from you. Send us a message and
               we'll respond as soon as possible.
             </p>

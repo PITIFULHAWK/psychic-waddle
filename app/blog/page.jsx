@@ -54,13 +54,13 @@ export default async function BlogPage() {
         </div>
         <div className="absolute inset-0 bg-gradient-to-r from-[#003B7E]/90 to-[#003B7E]/80 flex items-center">
           <div className="container mx-auto px-4">
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 animate-fade-in-up">
               Blogs
             </h1>
-            <p className="text-xl text-white/90 mb-8">
+            <p className="text-xl text-white/90 mb-8 animate-fade-in-up">
               Insights and advice for financial success
             </p>
-            <div className="flex gap-4 max-w-md">
+            {/* <div className="flex gap-4 max-w-md">
               <Input
                 placeholder="Search articles..."
                 className="bg-white/90 text-black placeholder:text-gray-500"
@@ -72,7 +72,7 @@ export default async function BlogPage() {
                 <Search className="w-4 h-4 mr-2" />
                 Search
               </Button>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>

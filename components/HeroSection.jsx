@@ -15,10 +15,10 @@ export default function HeroSection() {
         <div className="absolute inset-0 bg-gradient-to-r from-[#003B7E]/90 to-[#003B7E]/80 z-10" />
         <div className="relative z-20 container mx-auto px-4">
           <div className="max-w-3xl">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 animate-fade-in-up">
               Leveraging the business process excellence
             </h1>
-            <div className="space-y-4">
+            <div className="space-y-4 animate-fade-in-up">
               <p className="text-lg sm:text-xl md:text-2xl text-white/90">
                 For Enterprises across the globe
               </p>

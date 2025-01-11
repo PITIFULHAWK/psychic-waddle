@@ -111,10 +111,10 @@ export default function ServicesPage() {
         </div>
         <div className="absolute inset-0 bg-gradient-to-r from-[#003B7E]/90 to-[#003B7E]/80 flex items-center">
           <div className="container mx-auto px-4">
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 animate-fade-in-up">
               Our Services
             </h1>
-            <p className="text-xl text-white/90 mb-8">
+            <p className="text-xl text-white/90 mb-8 animate-fade-in-up">
               Comprehensive financial solutions for your business
             </p>
           </div>
