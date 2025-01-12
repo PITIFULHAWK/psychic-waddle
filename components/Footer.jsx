@@ -55,7 +55,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="h-5 w-5" />
-                <span>info@phynovate.com</span>
+                <span>info@phynovate.co.in</span>
               </div>
               {/*<Button className="bg-orange-500 hover:bg-orange-600 text-white">
                 Get A Quote
