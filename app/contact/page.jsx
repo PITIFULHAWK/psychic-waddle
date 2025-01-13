@@ -68,7 +68,7 @@ export default function ContactPage() {
               <ContactInfo
                 icon={<Mail className="h-6 w-6 text-[#003B7E]" />}
                 title="Email"
-                content="info@phynovate.com"
+                content="info@phynovate.co.in"
               />
               {/*<ContactInfo
                 icon={<MapPin className="h-6 w-6 text-[#003B7E]" />}
