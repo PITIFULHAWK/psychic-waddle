@@ -24,7 +24,6 @@ export async function sendEmail(formData) {
   });
 
   try {
-    console.log("in sendMail");
     await transporter.sendMail({
       from: `"${firstName} ${lastName}" <${email}>`,
       to: process.env.BUSINESS_EMAIL,
@@ -43,7 +42,6 @@ export async function sendEmail(formData) {
         <p><strong>Message:</strong> ${message}</p>
       `,
     });
-    console.log("out sendMail");
 
     return { success: true, message: "Email sent successfully" };
   } catch (error) {
